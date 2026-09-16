@@ -1,21 +1,178 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fbf8f6">
 <title>Vela — Female Health OS</title>
 <style>
-:root{--bg:#fbf8f6;--card:#fff;--ink:#302b2d;--muted:#887d81;--rose:#d88b9a;--rose2:#f5dfe4;--sage:#dfeae2;--line:#eee5e4;--shadow:0 16px 45px rgba(64,43,47,.07)}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}.app{display:flex;min-height:100vh}.side{width:245px;background:#fff;border-right:1px solid var(--line);padding:28px 16px;position:fixed;inset:0 auto 0 0}.brand{font:32px Georgia;margin:0 12px 3px}.tag{font-size:11px;color:var(--muted);margin:0 12px 30px}.nav button{width:100%;text-align:left;border:0;background:transparent;padding:13px 14px;border-radius:12px;color:#766c70;margin:3px 0;cursor:pointer;font:inherit}.nav button.active,.nav button:hover{background:var(--rose2);color:#603f47}.privacy{position:absolute;bottom:20px;left:16px;right:16px;background:#f7f3f2;padding:14px;border-radius:14px;font-size:12px;line-height:1.45}.privacy b{display:block;margin-bottom:4px}.main{margin-left:245px;width:calc(100% - 245px);padding:34px 48px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px}.hello{font-size:13px;color:var(--muted)}h1{font:34px Georgia;margin:5px 0}.profile{display:flex;gap:10px;align-items:center;font-size:12px}.avatar{width:40px;height:40px;border-radius:50%;background:var(--rose2);display:grid;place-items:center;font-weight:700;color:#754b55}.page{display:none}.page.active{display:block}.grid{display:grid;grid-template-columns:1.25fr .75fr;gap:20px}.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:21px;box-shadow:var(--shadow)}.card h2{font-size:16px;margin:0 0 15px}.wide{grid-column:1/-1}.cycle{display:flex;gap:25px;align-items:center}.ring{width:136px;height:136px;border-radius:50%;background:conic-gradient(var(--rose) 0 68%,#f4edef 68%);display:grid;place-items:center;flex:none}.ringin{width:103px;height:103px;background:#fff;border-radius:50%;display:grid;place-items:center;text-align:center}.ringin b{font-size:30px}.ringin span{font-size:11px;color:var(--muted);display:block}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;flex:1}.stat{background:#faf7f6;border-radius:13px;padding:13px}.stat span{font-size:10px;color:var(--muted)}.stat b{display:block;font-size:19px;margin-top:4px}.wear{display:flex;gap:8px;flex-wrap:wrap}.wear span{border:1px solid var(--line);padding:9px 11px;border-radius:11px;font-size:11px}.muted{font-size:12px;color:var(--muted);line-height:1.5}.btn{padding:10px 14px;border:0;border-radius:11px;cursor:pointer;font:inherit;font-size:12px}.primary{background:var(--ink);color:#fff}.secondary{background:var(--rose2);color:#68434b}.insight{background:linear-gradient(135deg,#fbebee,#f5f1ed);padding:17px;border-radius:15px}.pill{display:inline-block;font-size:9px;background:#fff;padding:5px 8px;border-radius:20px;color:#825761;margin-bottom:7px}.insight p{margin:0;font-size:13px;line-height:1.5}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.trend{height:180px;background:linear-gradient(180deg,#fff,#fbf6f6);border-radius:14px;position:relative;overflow:hidden}.line{position:absolute;left:7%;right:5%;top:48%;height:3px;background:var(--rose);transform:rotate(-4deg);border-radius:10px;box-shadow:35px -9px 0 -1px var(--rose),70px 10px 0 -1px var(--rose),105px -18px 0 -1px var(--rose),140px 1px 0 -1px var(--rose),175px -12px 0 -1px var(--rose),210px 7px 0 -1px var(--rose)}.labels{position:absolute;bottom:9px;left:12px;right:12px;display:flex;justify-content:space-between;font-size:10px;color:var(--muted)}.timeline{display:grid;grid-template-columns:100px 1fr;border-top:1px solid var(--line)}.tl{padding:14px 0;border-bottom:1px solid var(--line)}.tl b{font-size:11px}.tl p{margin:3px 0;font-size:12px;color:#71696b}.list{display:grid;gap:10px}.row{display:flex;justify-content:space-between;align-items:center;padding:14px;background:#faf7f6;border-radius:14px}.row strong{font-size:13px}.row small{display:block;color:var(--muted);margin-top:3px}.badge{font-size:10px;padding:6px 8px;border-radius:20px;background:var(--sage)}.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}.day{padding:12px 4px;text-align:center;border-radius:10px;font-size:11px}.day.head{color:var(--muted);font-size:9px}.day.period{background:var(--rose2)}.day.today{outline:2px solid var(--rose)}.share{border:1px solid var(--line);padding:15px;border-radius:14px;margin-top:10px}.share input{accent-color:var(--rose)}.toast{position:fixed;right:25px;bottom:25px;background:var(--ink);color:#fff;padding:13px 17px;border-radius:13px;display:none;font-size:12px;box-shadow:var(--shadow)}@media(max-width:850px){.side{width:70px;padding:20px 8px}.brand,.tag,.privacy,.nav span{display:none}.nav button{text-align:center}.main{margin-left:70px;width:calc(100% - 70px);padding:22px}.grid{grid-template-columns:1fr}.wide{grid-column:auto}.top{align-items:flex-start}.profile span{display:none}}
-</style></head><body>
-<div class="app"><aside class="side"><h2 class="brand">Vela</h2><p class="tag">female health, privately.</p><nav class="nav"><button class="active" data-page="home">◉ <span>Inicio</span></button><button data-page="cycle">◌ <span>Mi ciclo</span></button><button data-page="patterns">⌁ <span>Mis patrones</span></button><button data-page="health">＋ <span>Mi salud</span></button><button data-page="pro">♡ <span>Profesionales</span></button></nav><div class="privacy"><b>🔐 Privacidad primero</b>Vos decidís qué datos guardar y qué información compartir.</div></aside>
-<main class="main"><div class="top"><div><div class="hello">martes, 15 de septiembre</div><h1 id="title">Buenos días, Veronika</h1></div><div class="profile"><span>Premium · $3.50/mes</span><div class="avatar">V</div></div></div>
-<section id="home" class="page active"><div class="grid"><section class="card"><h2>Tu ciclo</h2><div class="cycle"><div class="ring"><div class="ringin"><b>21</b><span>día del ciclo</span></div></div><div class="stats"><div class="stat"><span>Próximo periodo</span><b>~7 días</b></div><div class="stat"><span>Ciclo promedio</span><b>29 días</b></div><div class="stat"><span>Energía</span><b>7/10</b></div><div class="stat"><span>Sueño</span><b>6h 48m</b></div></div></div></section><section class="card"><h2>Dispositivos</h2><div class="wear"><span>⌚ Apple Health · conectado</span><span>● WHOOP · conectado</span><span>Garmin · conectar</span><span>Oura · conectar</span></div><p class="muted">En este demo usamos datos ficticios. Las conexiones reales requieren autorización.</p><button class="btn secondary" onclick="toast('Panel de conexiones — demo')">Administrar conexiones</button></section><section class="card"><h2>Tus tendencias</h2><div class="trend"><div class="line"></div><div class="labels"><span>Jun</span><span>Jul</span><span>Ago</span><span>Sep</span></div></div><p class="muted">Recuperación / energía durante los últimos 4 ciclos.</p></section><section class="card"><h2>Insight de hoy</h2><div class="insight"><span class="pill">PATRÓN DETECTADO</span><p><strong>Tu sueño suele disminuir antes de tu menstruación.</strong><br>En tus últimos 4 ciclos, dormiste en promedio 34 minutos menos durante los 2 días previos.</p></div><p class="muted">Describe un patrón de tus registros; no es un diagnóstico médico.</p></section><section class="card wide"><h2>Tu historia de salud</h2><div class="timeline"><div class="tl"><b>15 SEP</b></div><div class="tl"><b>Hoy</b><p>Check-in: energía 7/10 · ánimo 8/10 · sueño 6h 48m</p></div><div class="tl"><b>01 SEP</b></div><div class="tl"><b>Ciclo</b><p>Inicio de menstruación · síntomas leves · dolor 2/10</p></div><div class="tl"><b>15 AGO</b></div><div class="tl"><b>Laboratorio</b><p>Nuevo resultado agregado al historial</p></div></div><div class="actions"><button class="btn primary" onclick="toast('Resumen de 90 días preparado — demo')">Preparar mi consulta</button><button class="btn secondary" onclick="toast('Elegí qué información compartir — demo')">Compartir datos</button></div></section></div></section>
-<section id="cycle" class="page"><div class="grid"><section class="card"><h2>Mi ciclo · septiembre</h2><p class="muted">Día 21 · promedio de 29 días</p><div class="calendar">${Array.from({length:35},(_,i)=>`<div class="day ${i<7?'head':''}">${['L','M','X','J','V','S','D'][i%7]}</div>`).join('')}</div><p class="muted">🩷 menstruación · ◯ hoy</p></section><section class="card"><h2>Cómo te sentís</h2><div class="list"><div class="row"><div><strong>Energía</strong><small>Hoy</small></div><b>7/10</b></div><div class="row"><div><strong>Ánimo</strong><small>Hoy</small></div><b>8/10</b></div><div class="row"><div><strong>Dolor</strong><small>Hoy</small></div><b>2/10</b></div><div class="row"><div><strong>Síntomas</strong><small>Hinchazón leve</small></div><span class="badge">registrado</span></div></div><button class="btn primary" style="margin-top:12px" onclick="toast('Check-in guardado — demo')">+ Registrar hoy</button></section></div></section>
-<section id="patterns" class="page"><div class="grid"><section class="card"><h2>Mis patrones</h2><p class="muted">LÚA aprende de tus propios registros. Mientras más datos tengas, mejores serán las tendencias.</p><div class="list"><div class="insight"><span class="pill">SUEÑO</span><p>Tu sueño ha sido <strong>34 min menor</strong> en promedio durante los 2 días previos a tu menstruación.</p></div><div class="insight"><span class="pill">RECUPERACIÓN</span><p>Tu recuperación de WHOOP suele bajar antes del inicio de tu periodo.</p></div><div class="insight"><span class="pill">ENERGÍA</span><p>Tu energía promedio es mayor durante la mitad de tu ciclo.</p></div></div></section><section class="card"><h2>Datos que usamos</h2><div class="list"><div class="row"><div><strong>🩸 Ciclo</strong><small>21 días registrados</small></div><span class="badge">activo</span></div><div class="row"><div><strong>😴 Sueño</strong><small>últimos 90 días</small></div><span class="badge">WHOOP</span></div><div class="row"><div><strong>❤️ HRV</strong><small>últimos 90 días</small></div><span class="badge">WHOOP</span></div></div></section></div></section>
-<section id="health" class="page"><div class="grid"><section class="card"><h2>Mi salud</h2><p class="muted">Un historial personal para organizar tu evolución.</p><div class="list"><div class="row"><div><strong>🧪 Laboratorios</strong><small>4 resultados · último 15 ago</small></div><button class="btn secondary" onclick="toast('Laboratorios — demo')">Ver</button></div><div class="row"><div><strong>🌿 Suplementos</strong><small>3 activos · cambios registrados</small></div><button class="btn secondary" onclick="toast('Suplementos — demo')">Ver</button></div><div class="row"><div><strong>💊 Medicamentos</strong><small>2 registrados</small></div><button class="btn secondary" onclick="toast('Medicamentos — demo')">Ver</button></div></div></section><section class="card"><h2>Evolución</h2><div class="insight"><span class="pill">ÚLTIMOS 6 MESES</span><p><strong>Dolor menstrual</strong><br>7/10 → 5/10 → 3/10</p></div><div class="insight"><span class="pill">SUEÑO</span><p><strong>Promedio</strong><br>6h 12m → 6h 48m</p></div><button class="btn primary" onclick="toast('Reporte exportado — demo')">Exportar historial</button></section></div></section>
-<section id="pro" class="page"><div class="grid"><section class="card"><h2>Profesionales de salud</h2><p class="muted">En una versión futura, podrás encontrar profesionales verificados y compartir con ellos solo la información que elijas.</p><div class="list"><div class="row"><div><strong>👩🏻‍⚕️ Ginecología</strong><small>Salud femenina · San José</small></div><button class="btn secondary" onclick="toast('Perfil profesional — demo')">Ver</button></div><div class="row"><div><strong>🥗 Nutrición</strong><small>Wellness femenino · Escazú</small></div><button class="btn secondary" onclick="toast('Perfil profesional — demo')">Ver</button></div><div class="row"><div><strong>🩺 Medicina interna</strong><small>Prevención · San José</small></div><button class="btn secondary" onclick="toast('Perfil profesional — demo')">Ver</button></div></div></section><section class="card"><h2>Compartir mi salud</h2><p class="muted">Vos controlás el acceso. En este demo podés simular los permisos.</p><div class="share">☑ Ciclo y síntomas</div><div class="share">☑ Sueño y actividad</div><div class="share">☐ HRV y recuperación</div><div class="share">☑ Laboratorios</div><div class="share">☐ Información sexual</div><button class="btn primary" style="margin-top:12px" onclick="toast('Permisos actualizados — demo')">Guardar permisos</button></section></div></section>
-<div id="toast" class="toast"></div></main></div>
+:root{--bg:#fbf8f6;--card:#fff;--ink:#302b2d;--muted:#887d81;--rose:#d88b9a;--rose2:#f5dfe4;--rose3:#fff3f5;--sage:#dfeae2;--line:#eee5e4;--shadow:0 16px 45px rgba(64,43,47,.07)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+button{font:inherit}
+.app{display:flex;min-height:100vh}
+.side{width:245px;background:#fff;border-right:1px solid var(--line);padding:28px 16px;position:fixed;inset:0 auto 0 0;z-index:10}
+.brand{font:32px Georgia,serif;margin:0 12px 3px}
+.tag{font-size:11px;color:var(--muted);margin:0 12px 30px}
+.nav button{width:100%;text-align:left;border:0;background:transparent;padding:13px 14px;border-radius:12px;color:#766c70;margin:3px 0;cursor:pointer;transition:.2s}
+.nav button.active,.nav button:hover{background:var(--rose2);color:#603f47}
+.privacy{position:absolute;bottom:20px;left:16px;right:16px;background:#f7f3f2;padding:14px;border-radius:14px;font-size:12px;line-height:1.45}
+.privacy b{display:block;margin-bottom:4px}
+.main{margin-left:245px;width:calc(100% - 245px);padding:34px 48px;max-width:1500px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px}
+.hello{font-size:13px;color:var(--muted)}
+h1{font:34px Georgia,serif;margin:5px 0}
+.profile{display:flex;gap:10px;align-items:center;font-size:12px}
+.avatar{width:40px;height:40px;border-radius:50%;background:var(--rose2);display:grid;place-items:center;font-weight:700;color:#754b55}
+.page{display:none;animation:fade .2s ease}
+.page.active{display:block}
+@keyframes fade{from{opacity:.3;transform:translateY(3px)}to{opacity:1;transform:none}}
+.grid{display:grid;grid-template-columns:1.25fr .75fr;gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:21px;box-shadow:var(--shadow)}
+.card h2{font-size:16px;margin:0 0 15px}
+.wide{grid-column:1/-1}
+.cycle{display:flex;gap:25px;align-items:center}
+.ring{width:136px;height:136px;border-radius:50%;background:conic-gradient(var(--rose) 0 72%,#f4edef 72%);display:grid;place-items:center;flex:none}
+.ringin{width:103px;height:103px;background:#fff;border-radius:50%;display:grid;place-items:center;text-align:center}
+.ringin b{font-size:30px}.ringin span{font-size:11px;color:var(--muted);display:block}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;flex:1}
+.stat{background:#faf7f6;border-radius:13px;padding:13px}.stat span{font-size:10px;color:var(--muted)}.stat b{display:block;font-size:19px;margin-top:4px}
+.wear{display:flex;gap:8px;flex-wrap:wrap}.wear span{border:1px solid var(--line);padding:9px 11px;border-radius:11px;font-size:11px}
+.muted{font-size:12px;color:var(--muted);line-height:1.5}
+.btn{padding:10px 14px;border:0;border-radius:11px;cursor:pointer;font-size:12px;transition:.2s}.btn:hover{transform:translateY(-1px)}
+.primary{background:var(--ink);color:#fff}.secondary{background:var(--rose2);color:#68434b}
+.insight{background:linear-gradient(135deg,#fbebee,#f5f1ed);padding:17px;border-radius:15px}
+.pill{display:inline-block;font-size:9px;background:#fff;padding:5px 8px;border-radius:20px;color:#825761;margin-bottom:7px}
+.insight p{margin:0;font-size:13px;line-height:1.5}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}
+.trend{height:180px;background:linear-gradient(180deg,#fff,#fbf6f6);border-radius:14px;position:relative;overflow:hidden;padding:12px}
+.trend-grid{position:absolute;inset:12px 12px 30px;background:repeating-linear-gradient(to bottom,transparent 0,transparent 40px,#eee5e4 41px)}
+.trend-svg{position:absolute;inset:12px 12px 30px;width:calc(100% - 24px);height:calc(100% - 42px)}
+.trend-labels{position:absolute;bottom:9px;left:12px;right:12px;display:flex;justify-content:space-between;font-size:10px;color:var(--muted)}
+.timeline{display:grid;grid-template-columns:100px 1fr;border-top:1px solid var(--line)}
+.tl{padding:14px 0;border-bottom:1px solid var(--line)}.tl b{font-size:11px}.tl p{margin:3px 0;font-size:12px;color:#71696b}
+.list{display:grid;gap:10px}.row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px;background:#faf7f6;border-radius:14px}
+.row strong{font-size:13px}.row small{display:block;color:var(--muted);margin-top:3px}.badge{font-size:10px;padding:6px 8px;border-radius:20px;background:var(--sage);white-space:nowrap}
+.calendar-head{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:6px}.calendar-head div{text-align:center;color:var(--muted);font-size:10px;padding:6px 2px}
+.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}.day{min-height:43px;padding:10px 4px;text-align:center;border-radius:10px;font-size:11px;background:#faf7f6;cursor:pointer;border:1px solid transparent;transition:.2s}.day:hover{border-color:var(--rose)}.day.empty{background:transparent;cursor:default}.day.period{background:var(--rose2);color:#70424c}.day.today{outline:2px solid var(--rose);outline-offset:-2px;font-weight:700}.day.fertile{background:var(--rose3)}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;font-size:11px;color:var(--muted)}.legend span{display:flex;align-items:center;gap:6px}.dot{width:10px;height:10px;border-radius:50%;display:inline-block}.dot.period{background:var(--rose2)}.dot.fertile{background:var(--rose3);border:1px solid var(--rose2)}.dot.today{border:2px solid var(--rose)}
+.share{border:1px solid var(--line);padding:13px;border-radius:14px;margin-top:10px;display:flex;align-items:center;gap:10px}.share input{accent-color:var(--rose)}
+.toast{position:fixed;right:25px;bottom:25px;background:var(--ink);color:#fff;padding:13px 17px;border-radius:13px;display:none;font-size:12px;box-shadow:var(--shadow);z-index:100}
+.empty-state{padding:20px;border:1px dashed var(--line);border-radius:14px;text-align:center;color:var(--muted);font-size:12px}
+@media(max-width:850px){.side{width:70px;padding:20px 8px}.brand,.tag,.privacy,.nav span{display:none}.nav button{text-align:center}.main{margin-left:70px;width:calc(100% - 70px);padding:22px}.grid{grid-template-columns:1fr}.wide{grid-column:auto}.top{align-items:flex-start}.profile span{display:none}}
+@media(max-width:520px){.main{padding:18px 14px}.top{margin-bottom:18px}h1{font-size:28px}.cycle{flex-direction:column;align-items:flex-start}.stats{width:100%}.calendar{gap:3px}.calendar-head{gap:3px}.day{min-height:38px;padding:9px 2px}.timeline{grid-template-columns:70px 1fr}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="side">
+<h2 class="brand">Vela</h2>
+<p class="tag">female health, privately.</p>
+<nav class="nav" aria-label="Navegación principal">
+<button class="active" data-page="home">◉ <span>Inicio</span></button>
+<button data-page="cycle">◌ <span>Mi ciclo</span></button>
+<button data-page="patterns">⌁ <span>Mis patrones</span></button>
+<button data-page="health">＋ <span>Mi salud</span></button>
+<button data-page="pro">♡ <span>Profesionales</span></button>
+</nav>
+<div class="privacy"><b>🔐 Privacidad primero</b>Vos decidís qué datos guardar y qué información compartir.</div>
+</aside>
+
+<main class="main">
+<div class="top">
+<div><div class="hello">martes, 15 de septiembre</div><h1 id="title">Buenos días, Veronika</h1></div>
+<div class="profile"><span>Premium · $3.50/mes</span><div class="avatar">V</div></div>
+</div>
+
+<section id="home" class="page active">
+<div class="grid">
+<section class="card"><h2>Tu ciclo</h2><div class="cycle"><div class="ring"><div class="ringin"><b>21</b><span>día del ciclo</span></div></div><div class="stats"><div class="stat"><span>Próximo periodo</span><b>~7 días</b></div><div class="stat"><span>Ciclo promedio</span><b>29 días</b></div><div class="stat"><span>Energía</span><b>7/10</b></div><div class="stat"><span>Sueño</span><b>6h 48m</b></div></div></div></section>
+<section class="card"><h2>Dispositivos</h2><div class="wear"><span>⌚ Apple Health · conectado</span><span>● WHOOP · conectado</span><span>Garmin · conectar</span><span>Oura · conectar</span></div><p class="muted">En este demo usamos datos ficticios. Las conexiones reales requieren autorización.</p><button class="btn secondary" onclick="toast('Panel de conexiones — demo')">Administrar conexiones</button></section>
+<section class="card"><h2>Tus tendencias</h2><div class="trend"><div class="trend-grid"></div><svg class="trend-svg" viewBox="0 0 500 130" preserveAspectRatio="none" aria-label="Tendencia de recuperación"><polyline points="0,82 70,70 140,77 210,48 280,58 350,37 420,46 500,22" fill="none" stroke="#d88b9a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="0" cy="82" r="5" fill="#d88b9a"/><circle cx="70" cy="70" r="5" fill="#d88b9a"/><circle cx="140" cy="77" r="5" fill="#d88b9a"/><circle cx="210" cy="48" r="5" fill="#d88b9a"/><circle cx="280" cy="58" r="5" fill="#d88b9a"/><circle cx="350" cy="37" r="5" fill="#d88b9a"/><circle cx="420" cy="46" r="5" fill="#d88b9a"/><circle cx="500" cy="22" r="5" fill="#d88b9a"/></svg><div class="trend-labels"><span>Jun</span><span>Jul</span><span>Ago</span><span>Sep</span></div></div><p class="muted">Recuperación / energía durante los últimos 4 ciclos.</p></section>
+<section class="card"><h2>Insight de hoy</h2><div class="insight"><span class="pill">PATRÓN DETECTADO</span><p><strong>Tu sueño suele disminuir antes de tu menstruación.</strong><br>En tus últimos 4 ciclos, dormiste en promedio 34 minutos menos durante los 2 días previos.</p></div><p class="muted">Describe un patrón de tus registros; no es un diagnóstico médico.</p></section>
+<section class="card wide"><h2>Tu historia de salud</h2><div class="timeline"><div class="tl"><b>15 SEP</b></div><div class="tl"><b>Hoy</b><p>Check-in: energía 7/10 · ánimo 8/10 · sueño 6h 48m</p></div><div class="tl"><b>01 SEP</b></div><div class="tl"><b>Registro</b><p>Síntomas leves · dolor 2/10</p></div><div class="tl"><b>15 AGO</b></div><div class="tl"><b>Laboratorio</b><p>Nuevo resultado agregado al historial</p></div></div><div class="actions"><button class="btn primary" onclick="toast('Resumen de 90 días preparado — demo')">Preparar mi consulta</button><button class="btn secondary" onclick="goTo('pro')">Compartir datos</button></div></section>
+</div>
+</section>
+
+<section id="cycle" class="page">
+<div class="grid">
+<section class="card"><h2>Mi ciclo · septiembre</h2><p class="muted">Día 21 · promedio de 29 días</p><div class="calendar-head" id="calendarHead"></div><div class="calendar" id="calendar"></div><div class="legend"><span><i class="dot period"></i> menstruación</span><span><i class="dot fertile"></i> ventana estimada</span><span><i class="dot today"></i> hoy</span></div></section>
+<section class="card"><h2>Cómo te sentís</h2><div class="list"><div class="row"><div><strong>Energía</strong><small>Hoy</small></div><b>7/10</b></div><div class="row"><div><strong>Ánimo</strong><small>Hoy</small></div><b>8/10</b></div><div class="row"><div><strong>Dolor</strong><small>Hoy</small></div><b>2/10</b></div><div class="row"><div><strong>Síntomas</strong><small>Hinchazón leve</small></div><span class="badge">registrado</span></div></div><button class="btn primary" style="margin-top:12px" onclick="toast('Check-in guardado — demo')">+ Registrar hoy</button></section>
+</div>
+</section>
+
+<section id="patterns" class="page">
+<div class="grid">
+<section class="card"><h2>Mis patrones</h2><p class="muted">Vela aprende de tus propios registros. Mientras más datos tengas, mejores serán las tendencias.</p><div class="list"><div class="insight"><span class="pill">SUEÑO</span><p>Tu sueño ha sido <strong>34 min menor</strong> en promedio durante los 2 días previos a tu menstruación.</p></div><div class="insight"><span class="pill">RECUPERACIÓN</span><p>Tu recuperación de WHOOP suele bajar antes del inicio de tu periodo.</p></div><div class="insight"><span class="pill">ENERGÍA</span><p>Tu energía promedio es mayor durante la mitad de tu ciclo.</p></div></div></section>
+<section class="card"><h2>Datos que usamos</h2><div class="list"><div class="row"><div><strong>🩸 Ciclo</strong><small>21 días registrados</small></div><span class="badge">activo</span></div><div class="row"><div><strong>😴 Sueño</strong><small>últimos 90 días</small></div><span class="badge">WHOOP</span></div><div class="row"><div><strong>❤️ HRV</strong><small>últimos 90 días</small></div><span class="badge">WHOOP</span></div></div></section>
+</div>
+</section>
+
+<section id="health" class="page">
+<div class="grid">
+<section class="card"><h2>Mi salud</h2><p class="muted">Un historial personal para organizar tu evolución.</p><div class="list"><div class="row"><div><strong>🧪 Laboratorios</strong><small>4 resultados · último 15 ago</small></div><button class="btn secondary" onclick="toast('Laboratorios — demo')">Ver</button></div><div class="row"><div><strong>🌿 Suplementos</strong><small>3 activos · cambios registrados</small></div><button class="btn secondary" onclick="toast('Suplementos — demo')">Ver</button></div><div class="row"><div><strong>💊 Medicamentos</strong><small>2 registrados</small></div><button class="btn secondary" onclick="toast('Medicamentos — demo')">Ver</button></div></div></section>
+<section class="card"><h2>Evolución</h2><div class="insight"><span class="pill">ÚLTIMOS 6 MESES</span><p><strong>Dolor menstrual</strong><br>7/10 → 5/10 → 3/10</p></div><div class="insight" style="margin-top:10px"><span class="pill">SUEÑO</span><p><strong>Promedio</strong><br>6h 12m → 6h 48m</p></div><button class="btn primary" style="margin-top:12px" onclick="toast('Reporte exportado — demo')">Exportar historial</button></section>
+</div>
+</section>
+
+<section id="pro" class="page">
+<div class="grid">
+<section class="card"><h2>Profesionales de salud</h2><p class="muted">En una versión futura, podrás encontrar profesionales verificados y compartir con ellos solo la información que elijas.</p><div class="list"><div class="row"><div><strong>👩🏻‍⚕️ Ginecología</strong><small>Salud femenina · San José</small></div><button class="btn secondary" onclick="toast('Perfil profesional — demo')">Ver</button></div><div class="row"><div><strong>🥗 Nutrición</strong><small>Wellness femenino · Escazú</small></div><button class="btn secondary" onclick="toast('Perfil profesional — demo')">Ver</button></div><div class="row"><div><strong>🩺 Medicina interna</strong><small>Prevención · San José</small></div><button class="btn secondary" onclick="toast('Perfil profesional — demo')">Ver</button></div></div></section>
+<section class="card"><h2>Compartir mi salud</h2><p class="muted">Vos controlás el acceso. En este demo podés simular los permisos.</p><label class="share"><input type="checkbox" checked> Ciclo y síntomas</label><label class="share"><input type="checkbox" checked> Sueño y actividad</label><label class="share"><input type="checkbox"> HRV y recuperación</label><label class="share"><input type="checkbox" checked> Laboratorios</label><label class="share"><input type="checkbox"> Información sexual</label><button class="btn primary" style="margin-top:12px" onclick="toast('Permisos actualizados — demo')">Guardar permisos</button></section>
+</div>
+</section>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+</main>
+</div>
+
 <script>
 const pages={home:'Buenos días, Veronika',cycle:'Mi ciclo',patterns:'Mis patrones',health:'Mi salud',pro:'Profesionales'};
-document.querySelectorAll('.nav button').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(btn.dataset.page).classList.add('active');document.getElementById('title').textContent=pages[btn.dataset.page];window.scrollTo({top:0,behavior:'smooth'})}));
-function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.style.display='block';clearTimeout(window._t);window._t=setTimeout(()=>t.style.display='none',2200)}
-</script></body></html>
+
+function goTo(page){
+ document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===page));
+ document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===page));
+ document.getElementById('title').textContent=pages[page];
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+
+document.querySelectorAll('.nav button').forEach(btn=>btn.addEventListener('click',()=>goTo(btn.dataset.page)));
+
+function toast(msg){
+ const t=document.getElementById('toast');
+ t.textContent=msg;
+ t.style.display='block';
+ clearTimeout(window._toastTimer);
+ window._toastTimer=setTimeout(()=>t.style.display='none',2200);
+}
+
+function buildCalendar(){
+ const head=document.getElementById('calendarHead');
+ const calendar=document.getElementById('calendar');
+ if(!head||!calendar)return;
+ const names=['L','M','X','J','V','S','D'];
+ names.forEach(name=>{const el=document.createElement('div');el.textContent=name;head.appendChild(el)});
+ const year=2026, month=8; // septiembre, índice 8
+ const firstDay=new Date(year,month,1).getDay();
+ const mondayOffset=(firstDay+6)%7;
+ const daysInMonth=new Date(year,month+1,0).getDate();
+ for(let i=0;i<mondayOffset;i++){
+   const empty=document.createElement('div');empty.className='day empty';calendar.appendChild(empty);
+ }
+ for(let day=1;day<=daysInMonth;day++){
+   const el=document.createElement('button');
+   el.type='button';
+   el.className='day';
+   el.textContent=day;
+   if(day===15)el.classList.add('today');
+   // Datos ficticios del demo: ventana estimada alrededor de la mitad del ciclo.
+   if(day>=8&&day<=12)el.classList.add('fertile');
+   el.addEventListener('click',()=>toast(`15/${String(day).padStart(2,'0')}/2026 · registro de demo`));
+   calendar.appendChild(el);
+ }
+}
+
+buildCalendar();
+</script>
+</body>
+</html>
